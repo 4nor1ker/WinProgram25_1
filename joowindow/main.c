@@ -1,53 +1,98 @@
 #include <stdio.h>
 #include <windows.h>
 
-// gotoxy 함수 정의
+typedef struct {
+    int x;
+    int y;
+    int width;
+    int height;
+    int color;
+} jooWindow;
+
 void gotoxy(int x, int y) {
-    COORD coord;
-    coord.X = x;
-    coord.Y = y;
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+    COORD pos = { x, y };
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
-// 윈도우 창 그리기 함수 (변수 없이 중간 가로선 추가)
-void drawWindow(int x, int y, int width, int height) {
+void drawBox(jooWindow win)
+{
     int i;
+    printf("\033[30m\033[4%im", win.color);
 
-    // 윗줄 (모서리 +, 나머지는 -)
-    gotoxy(x, y);
+    gotoxy(win.x, win.y);
     printf("+");
-    for (i = 0; i < width - 2; i++) {
-        printf("-");  // 윗줄의 가로 선
+
+    i = 0;
+    while (i < win.width - 2)
+    {
+        printf("-");
+        i = i + 1;
     }
     printf("+");
 
-    // 중간 가로선 (위쪽에 하나 더 추가, 위치는 y+2)
-    gotoxy(x, y + 2);
+    gotoxy(win.x, win.y + 2);
     printf("+");
-    for (i = 0; i < width - 2; i++) {
-        printf("-");  // 중간 가로선의 가로 선
+
+    i = 0;
+    while (i < win.width - 2)
+    {
+        printf("-");
+        i = i + 1;
     }
     printf("+");
 
-    // 왼쪽/오른쪽 줄 (모서리는 +, 나머지는 |)
-    for (i = 1; i < height - 1; i++) {
-        gotoxy(x, y + i);  // 왼쪽 세로 선 위치
-        printf("|");  // 왼쪽 세로 선
-        gotoxy(x + width - 1, y + i);  // 오른쪽 세로 선 위치
-        printf("|");  // 오른쪽 세로 선
+    i = 0;
+    while (i < win.height - 2)
+    {
+        gotoxy(win.x, win.y + i + 1);
+        printf("|");
+        gotoxy(win.x + win.width - 1, win.y + i + 1);
+        printf("|");
+        i = i + 1;
     }
 
-    // 아랫줄 (모서리 +, 나머지는 -)
-    gotoxy(x, y + height - 1);
+    // 아랫줄
+    gotoxy(win.x, win.y + win.height - 1);
     printf("+");
-    for (i = 0; i < width - 2; i++) {
-        printf("-");  // 아랫줄의 가로 선
+
+    i = 0;
+    while (i < win.width - 2)
+    {
+        printf("-");
+        i = i + 1;
     }
     printf("+");
+
+    printf("\033[0m");
+    gotoxy(0, 15);
 }
 
-int main() {
-    // 예시: (10, 3) 위치에서 너비 20, 높이 7인 윈도우 창 그리기
-    drawWindow(10, 3, 20, 7);
+int main()
+{
+    int i = 0;
+    while (i < 15)
+    {
+        printf("\033[42m");  
+        printf("                                                                                           "); 
+        printf("\033[40m\n"); 
+        i = i + 1;
+    }
+
+    jooWindow a, b;
+    a.x = 10;
+    a.y = 3;
+    a.width = 20;
+    a.height = 7;
+    a.color = 7;
+
+    b.x = 15;
+    b.y = 5;
+    b.width = 20;
+    b.height = 7;
+    b.color = 4;
+
+    drawBox(a);  // 위치(10,3), 크기 20x7 (하얀색)
+    drawBox(b);  // 동일한 크기 윈도우 띄우기 (15,5) (파란색)
+
     return 0;
 }
