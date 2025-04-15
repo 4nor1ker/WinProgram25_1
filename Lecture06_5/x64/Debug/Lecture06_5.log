@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\GWNU2020\Desktop\winter12\Lecture06_5\main.c(8,11): warning C4101: 'mousePos' :참조되지 않은 지역 변수입니다.
+  Lecture06_5.vcxproj -> C:\Users\GWNU2020\Desktop\winter12\Lecture06\x64\Debug\Lecture06_5.exe
