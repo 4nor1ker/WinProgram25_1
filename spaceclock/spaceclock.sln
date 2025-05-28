@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spaceclock", "spaceclock.vcxproj", "{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}.Debug|x64.ActiveCfg = Debug|x64
+		{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}.Debug|x64.Build.0 = Debug|x64
+		{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}.Debug|x86.ActiveCfg = Debug|Win32
+		{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}.Debug|x86.Build.0 = Debug|Win32
+		{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}.Release|x64.ActiveCfg = Release|x64
+		{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}.Release|x64.Build.0 = Release|x64
+		{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}.Release|x86.ActiveCfg = Release|Win32
+		{925A3CE2-904B-47CE-BFA5-1C5EB9C21E18}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D58101E7-7ABC-4136-9F97-E8CDB1424C91}
+	EndGlobalSection
+EndGlobal
