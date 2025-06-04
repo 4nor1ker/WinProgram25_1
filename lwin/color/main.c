@@ -1,0 +1,11 @@
+glColor3f(1.0f, 0.0f, 0.0f);   // »¡°­
+glColor3f(1.0f, 0.5f, 0.0f);   // ÁÖÈ²
+glColor3f(1.0f, 1.0f, 0.0f);   // ³ë¶û
+glColor3f(0.0f, 1.0f, 0.0f);   // ÃÊ·Ï
+glColor3f(0.0f, 0.0f, 1.0f);   // ÆÄ¶û
+glColor3f(1.0f, 0.4f, 0.7f);   // ºÐÈ«
+glColor3f(0.5f, 0.0f, 0.5f);   // º¸¶ó
+glColor3f(0.0f, 0.0f, 0.0f);   // °ËÁ¤
+glColor3f(0.5f, 0.5f, 0.5f);   // È¸»ö
+glColor3f(1.0f, 1.0f, 1.0f);   // Èò»ö
+glColor3f(0.0f, 1.0f, 1.0f);   // ÇÏ´Ã»ö
